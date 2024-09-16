@@ -1,6 +1,6 @@
 ## 🎮 CS2 ChatRelay
 
-Ligtweight plugin to send your cs2 server chat messages to discord channel using webhook.
+Lightweight plugin to send your cs2 server chat messages to discord channel using webhook.
 Tested on Windows.
 
 ![GitHub tag (with filter)](https://img.shields.io/github/v/tag/asapverneri/CS2-ChatRelay?style=for-the-badge&label=Version)
