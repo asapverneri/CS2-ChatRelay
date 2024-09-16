@@ -17,8 +17,9 @@ Tested on Windows.
 ```json
 {
   "IgnoreCommands": true,
+  "OnlyShowCommands": false,
   "DiscordWebhook": "https://discord.com/api/webhooks/xxxxxx/xxxxxx",
-  "EmbedFooter": "ChatRelay (1.0) by verneri",
+  "EmbedFooter": "ChatRelay (1.1) by verneri",
   "ConfigVersion": 1
 }
 ```

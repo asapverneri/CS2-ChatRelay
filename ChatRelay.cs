@@ -11,9 +11,11 @@ public class ChatRelayConfig : BasePluginConfig
 {
     [JsonPropertyName("IgnoreCommands")] public bool IgnoreCommands { get; set; } = true;
 
+    [JsonPropertyName("OnlyShowCommands")] public bool OnlyShowCommands { get; set; } = false;
+
     [JsonPropertyName("DiscordWebhook")] public string DiscordWebhook { get; set; } = "";
 
-    [JsonPropertyName("EmbedFooter")] public string EmbedFooter { get; set; } = "ChatRelay (1.0) by verneri";
+    [JsonPropertyName("EmbedFooter")] public string EmbedFooter { get; set; } = "ChatRelay (1.1) by verneri";
 
 }
 public class ChatRelay : BasePlugin, IPluginConfig<ChatRelayConfig>
@@ -21,7 +23,7 @@ public class ChatRelay : BasePlugin, IPluginConfig<ChatRelayConfig>
     public override string ModuleName => "ChatRelay";
     public override string ModuleDescription => "send your cs2 server chat messages to discord";
     public override string ModuleAuthor => "verneri";
-    public override string ModuleVersion => "1.0";
+    public override string ModuleVersion => "1.1";
 
     public ChatRelayConfig Config { get; set; } = new();
 
@@ -45,6 +47,12 @@ public class ChatRelay : BasePlugin, IPluginConfig<ChatRelayConfig>
         if (Config.IgnoreCommands)
         {
             if (@event.Text.Contains('!') || @event.Text.Contains('/'))
+                return HookResult.Continue;
+        }
+
+        if (Config.OnlyShowCommands)
+        {
+            if (!@event.Text.Contains('!') && !@event.Text.Contains('/'))
                 return HookResult.Continue;
         }
 
