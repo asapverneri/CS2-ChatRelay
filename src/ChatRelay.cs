@@ -1,6 +1,7 @@
 using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Modules.Utils;
+using CounterStrikeSharp.API.Modules.Events;
 using Microsoft.Extensions.Logging;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -23,7 +24,7 @@ public class ChatRelay : BasePlugin, IPluginConfig<ChatRelayConfig>
     public override string ModuleName => "ChatRelay";
     public override string ModuleDescription => "send your cs2 server chat messages to discord";
     public override string ModuleAuthor => "verneri";
-    public override string ModuleVersion => "1.1";
+    public override string ModuleVersion => "1.2";
 
     public ChatRelayConfig Config { get; set; } = new();
 
