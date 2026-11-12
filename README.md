@@ -18,10 +18,17 @@ Lightweight plugin to send your cs2 server chat messages to discord channel usin
   "IgnoreCommands": true,
   "OnlyShowCommands": false,
   "DiscordWebhook": "https://discord.com/api/webhooks/xxxxxx/xxxxxx",
+  "JoinMessages": false,
+  "LeaveMessages": false,
+  "ConnectionWebhook": "",
   "EmbedFooter": "ChatRelay (1.1) by verneri",
   "ConfigVersion": 1
 }
 ```
+
+**Join / leave messages (optional, off by default):**
+- `JoinMessages` / `LeaveMessages`: post a message when a player joins / leaves the server (bots and GOTV are ignored, map changes are not reported as leave + join).
+- `ConnectionWebhook`: webhook for these messages. Leave it empty to use `DiscordWebhook`, or set a different one to keep them out of the chat channel.
 
 ---
 
